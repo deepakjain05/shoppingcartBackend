@@ -37,8 +37,8 @@ public class SupplierDaoTestCase {
 	 public void savesupplierTestCase()
 	 {
 		 	supplier=new Supplier();
-			supplier.setId("Supplier-002");
-			supplier.setName("Amar Enterperises");
+			supplier.setId("Supplier-006");
+			supplier.setName("Enterperises Mumbai");
 			supplier.setAddress("Mumbai");
 			 
 			 boolean status =supplierDAO.save(supplier);
@@ -50,9 +50,10 @@ public class SupplierDaoTestCase {
 	 @Test
 	 public void updatesupplierTestCase()
 	 {
-		supplier.setId("Supplier-001");
-		supplier.setName("Amar Enterprises");
-		supplier.setName("Andheri , Mumbai");
+		 supplier=new Supplier();
+		supplier.setId("Supplier-006");
+		supplier.setName("new  Enterprises");
+		supplier.setAddress(" Mumbai");
 		
 		boolean status=supplierDAO.update(supplier);
 		assertEquals("update supplier testcase", true,status);
@@ -62,7 +63,7 @@ public class SupplierDaoTestCase {
 		public void getsupplierSuccessTestCase()
 		{
 			
-		supplier= supplierDAO.get("Supplier-001");
+		supplier= supplierDAO.get("Supplier-004");
 		
 		assertNotNull("get supplier test case", supplier);
 		}
@@ -71,7 +72,7 @@ public class SupplierDaoTestCase {
 		public void getsupplierFailureTestCase()
 		{
 			
-		supplier= supplierDAO.get("Supplier-001");
+		supplier= supplierDAO.get("Supplier-004");
 		
 		assertNull("get supplier test case", supplier);
 		}

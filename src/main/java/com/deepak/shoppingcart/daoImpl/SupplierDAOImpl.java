@@ -2,7 +2,7 @@ package com.deepak.shoppingcart.daoImpl;
 
 
 
-import java.util.Date;
+
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -31,7 +31,7 @@ public class SupplierDAOImpl  implements SupplierDAO{
 	
 		try {
 			
-			sessionFactory.getCurrentSession().save(supplier);
+			sessionFactory.getCurrentSession().saveOrUpdate(supplier);
 			return true;
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
@@ -60,7 +60,7 @@ public class SupplierDAOImpl  implements SupplierDAO{
 	
 	public Supplier get(String id) {
 		
-		return sessionFactory.getCurrentSession().load(Supplier.class, id);
+		return sessionFactory.getCurrentSession().get(Supplier.class, id);
 
 	}
 
